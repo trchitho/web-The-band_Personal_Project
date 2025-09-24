@@ -1,0 +1,127 @@
+/* reset css */
+*{
+    padding: 0;
+    margin: 0;
+    background-origin: padding-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif; /* nhung the? co' chu~ se ke' thua`*/
+}
+
+/*
+1. Vị trí
+2. Kích thước (width, height)
+3. Màu sắc
+4. Kiểu dáng
+*/
+
+#main{
+
+}
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*bản chất là thanh header sẽ nổi lên trên, nhường chỗ cho thành phần tiếp theo(đè lên slider)*
+    cách fix: margin-top: = với chiều cao của header/
+    để cho thanh nav dính lên trên, trái,phải*/
+    height: 46px;
+    background-color: #000;
+}
+
+#nav li{
+    display: inline-block;/*thang hang*/
+    position: relative;/*thuộc tính của menu cha*/
+    
+}
+
+#nav > li > a{ /*css_selector, chọn những thẻ a là con trực tiếp của thẻ li, li là con trực tiếp của #nav: LÀ CON CẤP 1*/
+    color:  white;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px; /*cang theo chieu cao*/
+    padding: 0px 24px ;
+    display: block; /*kế thừa chiều ngang của thẻ chứa nó*, inline block là không kế thừa/
+    /* nếu padding 0px 24px thì dùng */
+    
+}
+
+#nav .subnav a{
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .subnav li{/* để toàn bộ vùng li có thể được hover */
+    width: 100%;
+}
+
+#nav li:hover .subnav{/*di chuột vào thẻ li trong #nav(MORE), sẽ kích hoạt .subnav*/
+    display: block;/*ghì đè display: none; trong #nav .subnav*/
+}
+
+#nav .subnav li:hover a,/*viết gộp css_selector*/
+#nav > li:hover > a{ /* hover thẻ li vì, khi nhấn vào more -> hiện ra menu con -> di chuột xuống thì sẽ vẫn còn hover trên more*/
+    /*css_selector để thẻ subnav không dính*/
+    color: black;
+    background-color: gray; 
+    
+}
+
+#nav{
+    display: inline-block; /*để cho thẻ nav ngắn lại, vừa theo chiều dài của content, để cho thẻ div: search-btn có thể nằm chung*/
+}
+
+#nav .subnav{
+    display: none;
+    position: absolute; /*tạo ra 1 menu là con của menu cha MORE*/
+    top: 100%;/**/
+    left: 0;/*top, left sẽ luôn đi kèm vs absolute. Phòng trường hợp khi set position nó kh ra vị trí đẹp*/
+    max-width: 160px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)  ;/*h: chiều ngang, v: chiều dọc, spread: độ bao phủ*/
+}
+
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+
+#header .search-btn{
+    float: right;/*để cho btn có thể nằm chung với nav(kéo sang bên phải), vì thẻ div có tính chất kế thừa hết chiều ngang mà thẻ div có thể chiếm*/
+    padding: 0 21px;/*căn chỉnh dựa trên dev_tool*/
+
+}
+
+#header .search-btn:hover{
+    background-color: red;
+    cursor: pointer;/*đổi chuột thành hình bàn tay khi di chuột vào*/
+}
+
+#header .Search-icon{
+    color: #fff;
+    font-size: 24px;
+    line-height: 46px;/*căn giữa*/
+    
+}
+
+#slider{
+    margin-top: 46px;
+    padding-top: 50%;/* đặt là %:" 50% chiều ngang của chính nó
+    Kích thước chiều cao luôn là 50% của chiều ngang*/
+
+    
+}
+
+#content{
+
+}
+
+#footer{
+
+}

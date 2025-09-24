@@ -1,0 +1,29 @@
+Website mẫu: https://www.w3schools.com/w3css/tryw3css_templates_band.htm
+
+Các thành phần:
+
+1. Header
+2. Navigation(chính, thường nằm trong header)
+3. Breadcumb: Khóa học > Html, css
+4. Sidebar(thanh bên trái or P màn hình, navigation phụ)
+5. Slider
+6. Banner
+7. Content
+8. Foooter
+
+
+Các loại commit message thường dùng
+
+feat: thêm mới tính năng/giao diện
+
+fix: sửa lỗi
+
+style: chỉnh CSS, format code, không đổi logic
+
+refactor: chỉnh code cho sạch hơn, không đổi tính năng
+
+docs: thêm/sửa README, comment
+
+chore: việc linh tinh (update .gitignore, config, v.v.)
+
+assets: thêm hình ảnh, font, icon
