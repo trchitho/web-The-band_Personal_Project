@@ -319,3 +319,117 @@ html{
 #footer{
 
 }
+
+.modal {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    position: fixed; /* Giữ modal ở vị trí cố định */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    z-index: 200; /* Đảm bảo modal hiển thị trên các phần tử khác */
+    display: flex;
+}
+
+/* .modal.open{
+    display: flex; 
+} */
+
+.modal-container{
+    margin: auto; /* Căn giữa modal */
+    background-color: white;
+    min-height: 200px;
+    width: 900px;
+    max-width:calc(100% - 32px); /*giảm 32px để tránh tràn ra ngoài */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative; /* Để nút đóng có thể được định vị tuyệt đối bên trong */
+}
+
+.modal-header{
+    background-color: #009688;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;/*căn giữa theo chiều ngang*/
+    align-items: center;/*căn giữa theo chiều dọc*/
+    height: 130px;
+}
+
+.modal-heading-icon{
+    margin-right: 10px;
+}
+
+.modal-close:hover{
+    opacity: 1;
+    transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/
+}
+
+.modal-close{
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.8;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label{
+    font-size: 15px;
+    margin: 10px 0px;/*cách trên dưới 10px*/
+    display: block;/*cho label thành khối*/
+    line-height: 1.5;
+}
+
+.modal-input{
+    border: 1px solid #ccc;
+    width: 100%;/*chiếm 100% khung hình*/
+    padding: 10px 0px;
+    margin-bottom: 25px;/*cách dưới 30px*/
+    font-size: 15px;
+}
+
+.modal-btn{
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 18px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;/*chiếm 100% khung hình*/   
+    text-transform: uppercase;
+}
+
+.modal-btn:hover{
+    background-color: #00796B;
+    transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/
+}
+
+.modal-footer{
+    text-align: right;
+    font-size: 15px;
+    
+    margin-top: 16px;
+}
+
+.modal-footer a{
+    text-decoration: none;
+
+    color: #2196F3;
+}
+
+@keyframes modalFadeIn {
+    from{
+
+    }
+    to{
+        
+    }
+}
