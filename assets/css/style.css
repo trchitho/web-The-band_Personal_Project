@@ -173,7 +173,7 @@ html{
     margin-top: 46px;
     padding-top: 50%;/* đặt là %:" 50% chiều ngang của chính nó
     Kích thước chiều cao luôn là 50% của chiều ngang*/
-    background: url(/WebTheBand/assets/img/home.jpg) top center /*background-position: top center;*/ / cover no-repeat; /*background-size: cover; background-repeat: no-repeat;*/
+    background: url(assets/img/home.jpg) top center /*background-position: top center;*/ / cover no-repeat; /*background-size: cover; background-repeat: no-repeat;*/
     /*background-size: cover; : ảnh sẽ tự động co giãn để phủ hết khung hình*/
     /*background-repeat: no-repeat; : ảnh sẽ không bị lặp lại*/
     
