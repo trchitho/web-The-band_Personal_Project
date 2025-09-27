@@ -5,16 +5,63 @@
     background-origin: padding-box;
 }
 
+/*Common*/
 .clear{
     clear: both;/*xóa float*/
 }
-
 .text-white{
     color: white !important;/*override các css khác*/
 }
-
+.text-center{
+    text-align: center !important;/*override các css khác*/
+}
 html{
     font-family: Arial, Helvetica, sans-serif; /* nhung the? co' chu~ se ke' thua`*/
+    scroll-behavior: smooth;/*cuộn mượt mà*/
+}
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both;/*xóa float*/
+}
+.col{
+    float: left;/*nổi sang bên trái*/
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;/*tính cả padding và border vào trong width*/
+}
+.col-1{
+    width: 100%;
+}
+.col-2{
+    width: 50%;
+}
+.col-3{
+    width: 33.3333333333%;
+}
+.btn{
+    color: #fff;
+    background-color: black;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+    transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/
+}
+
+.pull-right{
+    float: right;
 }
 
 /*
@@ -24,8 +71,10 @@ html{
 4. Kiểu dáng
 */
 
+/*main*/
 #main{
-
+    max-width: 1600px;/*chiều rộng tối đa của khung hình*/
+    margin: 0 auto;/*căn giữa theo chiều ngang*/
 }
 
 #header{
@@ -39,6 +88,7 @@ html{
     height: 46px;
     background-color: #000;
     z-index: 100;/*để cho header nổi lên trên các thành phần khác*/
+    font-size: 15px;
 }
 
 #nav li{
@@ -79,8 +129,8 @@ html{
 #nav > li:hover > a{ /* hover thẻ li vì, khi nhấn vào more -> hiện ra menu con -> di chuột xuống thì sẽ vẫn còn hover trên more*/
     /*css_selector để thẻ subnav không dính*/
     color: black;
-    background-color: gray; 
-    
+    background-color: #ccc; 
+    transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/    
 }
 
 #nav{
@@ -104,7 +154,6 @@ html{
 #header .search-btn{
     float: right;/*để cho btn có thể nằm chung với nav(kéo sang bên phải), vì thẻ div có tính chất kế thừa hết chiều ngang mà thẻ div có thể chiếm*/
     padding: 0 21px;/*căn chỉnh dựa trên dev_tool*/
-
 }
 
 #header .search-btn:hover{
@@ -164,8 +213,8 @@ html{
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 16px;
-    border-bottom: none;           /* w3 không có gạch chân mỗi section */
+    padding: 64px 0px 112px;/*cách trên 64px, cách dưới 112px*/
+    border-bottom: none;/* w3 không có gạch chân mỗi section */
 }
 
 #content .section-heading{
@@ -192,17 +241,9 @@ html{
 }
 
 #content .member-list{
+    margin-top: 48px;/*cách trên 48px*/
     max-width: 800px;/*chiếm 60% khung hình*/
     margin: 0 auto;/*căn giữa theo chiều ngang*/
-    list-style: none;/*bỏ dấu chấm*/
-    padding: 32px 0px;/*cách trên dưới 32px*/
-    text-align: center;
-}
-
-#content .member-item{
-    width: 33.33%;/*chiếm 33.33% khung hình*/
-    float: right;/*nổi sang bên phải*/
-    margin: 15px 0px;
 }
 
 #content .member-name{
@@ -255,15 +296,7 @@ html{
 }
 
 .place-list{
-    margin: 32px -8px 0px;/*bỏ padding của content-section*/
-    padding-bottom: 48px;/*cách dưới 48px*/
-}
-
-.place-item{
-    float: left;
-    width: 33.333333333333333%;
-    padding: 0 8px;
-    box-sizing: border-box;/*cho padding nằm trong width*/
+    margin-top: 32px;
 }
 
 .place-img{
@@ -279,7 +312,6 @@ html{
     cursor: pointer;
     transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/
 }
-
 
 .place-body{
     background-color: #fff;
@@ -299,25 +331,6 @@ html{
 .place-desc{
     margin-top: 15px;
     line-height: 1.4;
-}
-
-.place-buy-btn{
-    color: #fff;
-    background-color: black;
-    text-decoration: none;
-    padding: 11px 16px;
-    display: inline-block;
-    margin-top: 15px;
-}
-
-.place-buy-btn:hover{
-    background-color: #fff;
-    color: #757575;
-    transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/
-}
-
-#footer{
-
 }
 
 .modal {
@@ -345,6 +358,7 @@ html{
     max-width:calc(100% - 32px); /*giảm 32px để tránh tràn ra ngoài */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative; /* Để nút đóng có thể được định vị tuyệt đối bên trong */
+    animation: modalFadeIn 0.5s ease; /* Hiệu ứng xuất hiện mượt mà, lúc chậm lúc nhanh */
 }
 
 .modal-header{
@@ -415,7 +429,6 @@ html{
 .modal-footer{
     text-align: right;
     font-size: 15px;
-    
     margin-top: 16px;
 }
 
@@ -427,9 +440,80 @@ html{
 
 @keyframes modalFadeIn {
     from{
-
+        transform: translateY(-150px);/*di chuyển lên trên 150px*/
+        opacity: 0;
     }
     to{
-        
+        transform: translateY(0);/*về vị trí ban đầu*/
+        opacity: 1;
     }
+}
+
+/*contact form*/
+.contact-content{
+    margin-top: 48px;/*cách trên 48px*/
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.6;
+}
+/*Cach 1*/
+/* .contact-info p i{
+    color: #009688;
+    margin-right: 8px;
+} */
+/*Cach 2 css selector nang cao*/
+.contact-info i[class^="ti-"]{ /*chọn tất cả các thẻ i có class bắt đầu bằng ti-*/
+    width: 30px;
+    display: inline-block;/*cho thẻ i thành khối*/
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;/*cách dưới 16px*/
+    box-sizing: border-box;/*tính cả padding và border vào trong width*/
+}
+
+.map-section img{
+    width: 100%; /*chiếm 100% khung hình, luôn bằng 100% thẻ chứa nó*/
+    display: block;/*loại bỏ khoảng trắng bên dưới ảnh*/
+    object-fit: cover;/*ảnh sẽ tự động co giãn để phủ hết khung hình*/
+}
+
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list{
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+#footer .social-list a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .social-list a:hover{
+    opacity: 0.7;
+    margin: 0 8px;/*cách trái phải 8px*/
+    transition: all 0.3s ease;/*hiệu ứng chuyển đổi mượt mà*/   
+}
+
+#footer .copyright{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 16px;
+    line-height: 1.4;
+}
+
+#footer .copyright a{
+    color: rgba(0, 0, 0, 0.6);
 }
